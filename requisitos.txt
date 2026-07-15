@@ -1,0 +1,14 @@
+Anonimizador local Soul IA (Presidio en espanol)
+================================================
+Ya instalado en el portatil de Jorge (12-jul-2026). Si algun dia se monta
+en OTRO equipo:
+
+  pip install presidio-analyzer presidio-anonymizer
+  python -m spacy download es_core_news_md
+
+Arrancar:  python -X utf8 servidor.py   ->  http://localhost:8741
+(o doble clic en INICIAR-JUEVES.bat de la carpeta raiz, que arranca
+plataforma + anonimizador juntos)
+
+Todo corre en local. Motor: Presidio (open source, MIT), con modelo de
+espanol de spaCy y reconocedores a medida de DNI/NIE, telefono ES y NSS.

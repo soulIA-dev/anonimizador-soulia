@@ -1,0 +1,18 @@
+services:
+  anonimizador:
+    build: .
+    restart: unless-stopped
+    mem_limit: 900m
+    environment:
+      - ANONIMIZADOR_MODO=web
+    networks:
+      - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.anonimizador.rule=Host(`anonimizador.soulia.info`)
+      - traefik.http.routers.anonimizador.entrypoints=websecure
+      - traefik.http.routers.anonimizador.tls.certresolver=letsencrypt
+      - traefik.http.services.anonimizador.loadbalancer.server.port=8741
+networks:
+  dokploy-network:
+    external: true
